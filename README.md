@@ -46,5 +46,5 @@ kuis-produktif 7 [angka pertama] [angka kedua] [angka dan seterusnya]
 ```
 ### No 8
 ```
-kuis-produktif 8 [buah pertama] [buah kedua] [buah dan seterusnya]
+kuis-produktif 8 [buah pertama] [jumlah buah pertama] [buah kedua] [jumlah buah kedua] [buah dan seterusnya] [jumlah buah dan seterusnya]
 ```

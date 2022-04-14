@@ -79,7 +79,6 @@ pub fn penjualan_buah(val: Vec<(String, i32)>) -> String {
     }
 
     for v in val.clone(){
-        println!("{} {}", v.1, max_val);
         if v.1 == max_val{
             result.push_str(&v.0);
             result.push_str(" ");

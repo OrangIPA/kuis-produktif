@@ -63,22 +63,28 @@ pub fn run(config: Config){
         }
 
         8 => {
-            let mut a: Vec<i32> = vec![];
-            for v in config.clone().input {
-                let mut buffer: String = String::new();
-                print!("jumlah {}: ", v);
-                io::stdin().read_line(&mut buffer).expect("Failed to read line");
-                a.push(buffer.parse().expect("invalid input"));
-            }
-            if &a.len() != &config.input.len() {panic!("Something Went Wrong");}
             let mut input: Vec<(String, i32)> = vec![];
 
-            let mut buah = config.input.iter();
-            for v in a {
-                input.push((buah.next().unwrap().to_string(), v));
+            let mut a = config.input.iter();
+            let mut string_buffer = String::new();
+            let mut int_buffer: i32 = 0;
+            'a: loop {
+                match a.next() {
+                    Some(x) => {
+                        string_buffer = x.to_string();
+                    }
+                    None => break 'a
+                }
+                match a.next() {
+                    Some(x) => {
+                        int_buffer = x.parse().expect("invalid input");
+                    }
+                    None => break 'a
+                }
+                input.push((string_buffer, int_buffer));
             }
 
-            println!("{}", soal::penjualan_buah(input));
+            println!("buah yang paling banyak adalah {}", soal::penjualan_buah(input));
         }
 
         _ => {
